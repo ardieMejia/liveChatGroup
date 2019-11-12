@@ -73,7 +73,8 @@ var twiliochat = (function() {
     tc.handleNewChannelInputKeypress = function(event) {
         if (event.keyCode === 13) {
             tc.messagingClient.createChannel({
-                friendlyName: $newChannelInput.val()
+                friendlyName: $newChannelInput.val(),
+                isPrivate:true
             }).then(hideAddChannelInput);
             $(this).val('');
             event.preventDefault();
